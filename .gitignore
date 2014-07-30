@@ -1,1 +1,5 @@
 commit~ watch.sh~
+exifCache
+commit~ matchPhotos.py~ watch.sh~
+.#matchPhotos.py
+GitPython/
