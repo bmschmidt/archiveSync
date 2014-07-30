@@ -7,9 +7,11 @@ from the archives with hundreds of unlabeled
 photos, and notes that reference (sometimes) things being
 "photographed,"
 with no way to find them. This puts photos directly into the part of your 
-notes they describe:
+notes they describe. Here's a family photograph of the Nixons, dropped right into the "Nixon correspodence" folder.
 
+----------------------------------
 ![Example photo](demo.png)
+----------------------------------
 
 This solves that problem by using a
 constantly-updated git repository to track the exact time that each
