@@ -6,7 +6,12 @@ synchronizing archival photos with notes. It's terrible to come back
 from the archives with hundreds of unlabeled
 photos, and notes that reference (sometimes) things being
 "photographed,"
-with no way to find them. This solves that problem by using a
+with no way to find them. This puts photos directly into the part of your 
+notes they describe:
+
+![Example photo](demo.png)
+
+This solves that problem by using a
 constantly-updated git repository to track the exact time that each
 line was edited, and exif metadata stored in camera files to
 track the time each picture was taken.
@@ -86,20 +91,19 @@ determine which lines were edited, so if you edit a line but then
 change it again an hour later, the script won't know that line
 should have a photo tagged to it. (Inserting the commits back into the
 history directly would be nice, but I can't quite figure out how to do
-all the conflict resolution.) Things that might change a line, and
+all the conflict resolution.) There are a lot of things that might do
+this: I happen not to do most in the archives. Things that might change a line, and
 therefore make it invisible to you history, include:
 	* A universal find-replace
 	* Spell check
-	* Group-indenting or numbering, if that's how you organize.
-
+	* Group-indenting a batch of lines.
 2.If you don't save constantly, strange things may happen. A sudden
 jump from paragraph 88 to paragraph 20, for instance, may
 result in some pictures that you intended to follow paragraph 88
-instead being put before paragraph 20.
-The solution to this is to save more often. (Even if its just a couple
-returns at the end of the section you just finished.)
-
+instead being put before paragraph 20. The solution to this is to save
+more often. (Even if its just a couple returns at the end of the section you just finished.)
 3. If the process that constantly commits to git stops, it won't know
 where to put them. (Obviously).
 
 
+That said, it's worked seamlessly for me so far.
