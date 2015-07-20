@@ -58,11 +58,12 @@ In the archives
 1. Synchronize your computer and camera clocks.
 2. Put the directory with your markdown notes under version
 control. (Run `git init` in it, basically, if you haven't already).
-3. Run `./commit` (or `perl commit`), targeted at the proper directory, and keep it
-running: this will continuously commit your changes to the git archive in the repository.
+3. Run `./commit` (or `perl commit`), changing the filenames inside to reflect your 
+   own directory name, and keep it running: this will continuously commit your
+   changes to the git archive in the repository.
 4. Type in notes and take photographs as you normally
 would:^[Except for the warnings below] save your
-files often, most importantly every time you put down or pick up your camera.
+files often, at the very least every time you put down or pick up your camera.
 
 At home
 -------------
