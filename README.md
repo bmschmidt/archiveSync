@@ -6,8 +6,16 @@ synchronizing archival photos with notes. It's terrible to come back
 from the archives with hundreds of unlabeled
 photos, and notes that reference (sometimes) things being
 "photographed,"
-with no way to find them. This puts photos directly into the part of your 
-notes they describe. Here's a family photograph of the Nixons, dropped right into the "Nixon correspodence" folder.
+with no way to find them.
+This puts photos directly into the part of your 
+notes they describe. 
+As long as you take even cursory notes (writing the name of each box and folder as you
+open it), you'll have the necessary information before publication.
+
+Example Image
+-------------
+
+Here's a family photograph of the Nixons, dropped right into the "Nixon correspodence" folder.
 
 ----------------------------------
 ![Example photo](demo.png)
@@ -99,13 +107,18 @@ therefore make it invisible to you history, include:
 	* A universal find-replace
 	* Spell check
 	* Group-indenting a batch of lines.
-2.If you don't save constantly, strange things may happen. A sudden
+
+2. If you don't save constantly, strange things may happen. A sudden
 jump from paragraph 88 to paragraph 20, for instance, may
 result in some pictures that you intended to follow paragraph 88
 instead being put before paragraph 20. The solution to this is to save
 more often. (Even if its just a couple returns at the end of the section you just finished.)
+
 3. If the process that constantly commits to git stops, it won't know
 where to put them. (Obviously).
+
+4. Your camera clock and computer clock must be synchronized. If they're off by a minute, the photos may go into the wrong folder.
+
 
 
 That said, it's worked seamlessly for me so far.
