@@ -2,11 +2,12 @@ Archive Logger
 ===========
 
 This is an ad-hoc solution for a common problem for historians:
-synchronizing archival photos with notes. It's terrible to come back
+synchronizing archival photos with notes.
+It's terrible to come back
 from the archives with hundreds of unlabeled
-photos, and notes that reference (sometimes) things being
+photos, alongside typed-up notes that (sometimes) reference things being
 "photographed,"
-with no way to find them.
+without any convenient interface between the two.
 This puts photos directly into the part of your 
 notes they describe. 
 As long as you take even cursory notes (writing the name of each box and folder as you
