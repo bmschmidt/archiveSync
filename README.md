@@ -10,7 +10,9 @@ with no way to find them.
 This puts photos directly into the part of your 
 notes they describe. 
 As long as you take even cursory notes (writing the name of each box and folder as you
-open it), you'll have the necessary information before publication.
+open it), you'll have the necessary information for citation straight out of your notes 
+by reading them in a web browser.
+
 
 Example Image
 -------------
