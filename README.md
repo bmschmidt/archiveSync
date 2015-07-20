@@ -18,7 +18,7 @@ Example Image
 -------------
 
 Here's what it looks like in the end. 
-I took some notes on the "Nixon correspondence" folder, and then snapped a picture of the 1962 (?) Nixon family Christmas card. Then I moved on to a new folder and took a picture of a new image. The program neatly deposits the images just below whatever notes I took.
+I took some notes on the "Nixon correspondence" folder, and then snapped a picture of the 1962 (?) Nixon family Christmas card. Then I moved on to a new folder and took a picture of a new image. The program neatly deposits the images just below whatever notes I took. (Technically, it deposits thumbnails: then you click to see the full image.)
 
 ----------------------------------
 ![Example photo](demo.png)
