@@ -6,8 +6,18 @@ synchronizing archival photos with notes. It's terrible to come back
 from the archives with hundreds of unlabeled
 photos, and notes that reference (sometimes) things being
 "photographed,"
-with no way to find them. This puts photos directly into the part of your 
-notes they describe:
+with no way to find them.
+
+There's been a lot of effort put into getting historians to use elaborate databases to
+manage their images. No sane person is going to waste time adding metadata when they get
+back; so the game then becomes about creating a database that will organize photos best.
+
+I think this strategy is crazy. Historians don't need photo databases, because
+most are **already taking some form of notes. (I think?)**. These notes generally identify folders,
+boxes, and significance to precisely the degree necessary.
+
+So instead of asking you to maintain notes in one place and a photo database in another,
+this is a solution that simply, when you get back from the archive, puts thumbnails of photos directly into the part of your notes they describe, with links to full-size images.
 
 ![Example photo](demo.png)
 
@@ -24,6 +34,7 @@ It may be adaptable for others who, like me, are:
 
 1. Compulsive savers of documents (several times a minute), or
 willing to script something for your editor that will make you one.
+
 2. Taking archival notes in markdown or some other plain-text format.
 
 It's currently set up to work with a gitit installation, because I was
@@ -47,20 +58,24 @@ In the archives
 1. Synchronize your computer and camera clocks.
 2. Put the directory with your markdown notes under version
 control. (Run `git init` in it, basically, if you haven't already).
-3. Run `./commit` (or `perl commit`), targeted at the proper directory, and keep it
+3. Run `./commit` (or `perl commit`), and keep it
 running: this will continuously commit your changes to the git archive in the repository.
+(Note: right now, you'll have to change the directory name in there.
 4. Type in notes and take photographs as you normally
 would:^[Except for the warnings below] save your
-files often, most importantly every time you put down or pick up your camera.
+files often, most importantly every time you put down or pick up your camera. 
+If you can script an autosave function, all the better. Since your files are being committed
+to git every three seconds, there's no real risk if you know how to use git well.^[(The problem with this, of course, is that no one but no one knows how to use git well.)]
 
 At home
 -------------
 
-1. Put the photos from your camera into the photo directory defined in
-the options section of `matchPhotos.py`.
-2. Run `matchPhotos.py`. 
+1. Load your camera's SD card and find it
+2. Run `python matchPhotos.py --help`. This will tell you how to specify an
+import directory (the SD card), a markdown directory, and some other useful options.
 3. Compile your markdown to html; there should now be thumbnails that
-link to full pictures in your notes.
+link to full pictures in your notes.^[If, like me, you're using gitit, you may
+need an additional commit here.]
 
 Dependencies
 ===========
