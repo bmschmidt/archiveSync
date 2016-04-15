@@ -2,11 +2,11 @@ Archive Logger
 ===========
 
 This is an ad-hoc solution for a common problem for historians:
-synchronizing archival photos with notes. It's terrible to come back
+synchronizing archival photos with notes.
+It's terrible to come back
 from the archives with hundreds of unlabeled
-photos, and notes that reference (sometimes) things being
-"photographed,"
-with no way to find them.
+photos, alongside typed-up notes that (sometimes) reference things being
+"photographed," with no way to find them.
 
 There's been a lot of effort put into getting historians to use elaborate databases to
 manage their images. No sane person is going to waste time adding metadata when they get
@@ -19,7 +19,20 @@ boxes, and significance to precisely the degree necessary.
 So instead of asking you to maintain notes in one place and a photo database in another,
 this is a solution that simply, when you get back from the archive, puts thumbnails of photos directly into the part of your notes they describe, with links to full-size images.
 
+As long as you take even cursory notes (writing the name of each box and folder as you
+open it), you'll have the necessary information for citation straight out of your notes 
+by reading them in a web browser.
+
+
+Example Image
+-------------
+
+Here's what it looks like in the end. 
+I took some notes on the "Nixon correspondence" folder, and then snapped a picture of the 1962 (?) Nixon family Christmas card. Then I moved on to a new folder and took a picture of a new image. The program neatly deposits the images just below whatever notes I took. (Technically, it deposits thumbnails: then you click to see the full image.)
+
+----------------------------------
 ![Example photo](demo.png)
+----------------------------------
 
 This solves that problem by using a
 constantly-updated git repository to track the exact time that each
@@ -112,13 +125,17 @@ therefore make it invisible to you history, include:
 	* A universal find-replace
 	* Spell check
 	* Group-indenting a batch of lines.
-2.If you don't save constantly, strange things may happen. A sudden
+
+2. If you don't save constantly, strange things may happen. A sudden
 jump from paragraph 88 to paragraph 20, for instance, may
 result in some pictures that you intended to follow paragraph 88
 instead being put before paragraph 20. The solution to this is to save
 more often. (Even if its just a couple returns at the end of the section you just finished.)
+
 3. If the process that constantly commits to git stops, it won't know
 where to put them. (Obviously).
+
+4. Your camera clock and computer clock must be synchronized. If they're off by more than a minute or so (or if you work really fast), the photos may get out of sync with your notes.
 
 
 That said, it's worked seamlessly for me so far.
