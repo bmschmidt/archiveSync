@@ -145,27 +145,29 @@ class Picture(object):
         self.Save()
 
 def parse_args():
+    """
+    Parse a number of command-line arguments.
+    """
+    
     parser = argparse.ArgumentParser(description="Parser")
 
     ### --dry-run prints the changed files to stdout, stores the exif metadata,
     ### does nothing else.
-    parser.add_argument('--dry-run', dest='dryRun', action='store_true',default=False)
-    parser.add_argument('--markdown-dir', default = "/Users/bschmidt/Dropbox/gitit/wikidata/")
+    parser.add_argument('--dry-run', dest='dryRun', action='store_true',default=False,help="Cache photos and metadata, but do not write to Markdown files.")
+    parser.add_argument('--markdown-dir', default = "/Users/bschmidt/Dropbox/gitit/wikidata/",help="The directory where notes are kept in markdown format. This must be a git repository.")
     parser.add_argument('--import-photo-dir', default = "/Volumes/NO NAME/DCIM/100OLYMP/",help="The directory to import photos from: can be a camera SD card, for example.")
     parser.add_argument('--dest-photo-dir', help="The directory to save photos and thumbnails into", default = "/Users/bschmidt/Dropbox/gitit/static/img/archivalPhotos")
-    parser.add_argument('--ignore-past-age', default = float("Inf"), type=float,help = "Ignore photos more than this many days old from the directory: useful if you have other photos on your camera you don't want to waste time caching information on")
-
-
-    parser.add_argument('--photo-link-prefix', default = "/img/archivalPhotos/",help = "What to prefix the thumbnail name in the html: useful for displaying in gitit")
-
-
-    parser.add_argument('--markdown-suffix', default = ".page",help = "What markdown files inside the repo end in: usually this would be 'md'")
-    parser.add_argument('--picture-suffix', default = ".JPG",help = "Your camera's image extension.")
+    parser.add_argument('--ignore-past-age', default = float("Inf"), type=float,help = "Ignore photos more than this many days old from the directory: useful if you have other photos on your camera you don't want to waste time caching information and thumbnails for")
+    parser.add_argument('--photo-link-prefix', default = "/img/archivalPhotos/",help = "What to prefix the thumbnail name in the html: useful for displaying in gitit or other HTML formats.")
+    parser.add_argument('--markdown-suffix', default = ".page",help = "What markdown files inside the repo end in: usually this would be '.md', but it is '.page' by default since I use gitit.")
+    parser.add_argument('--picture-suffix', default = ".JPG",help = "Your camera's image extension. Possibly case sensitive.")
 
     #The suffix your camera uses for photos
     args = parser.parse_args()
     return args
 
+
+# A cache of seen photos. Initialized here so available to functions.
 cache = ()
 
 def main():
@@ -236,7 +238,8 @@ def main():
                                                 len(commit[1])-1)
             #The last line in the commit gets updated for each subsequent edit
             #If multiple documents are edited in the same commit,
-            #behavior is reasonable but undefined. (Probably alphabetical).
+            #behavior is undefined but hopefully reasonable. (Probably the last edit
+            # is tagged to the alphabetically last document, but no guarantees).
             timeLookup[eTime]['lastLine'] = (editNumber,
                                             commitNumber,
                                             len(commit[1])-1)
@@ -269,7 +272,8 @@ def main():
         #find the nearest edit
         nearestEdit = takeClosest(editTimes,myPict.epoch)
 
-        #Should it go near the first or the last element?
+        # Should it go near the first or the last element?
+        # Well, was the picture before or after the typing?
         putNear = 'lastLine'
         if myPict.epoch < nearestEdit:
             putNear = 'firstLine'
